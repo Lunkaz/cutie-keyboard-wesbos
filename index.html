@@ -54,15 +54,38 @@
   </div>
 
   <!--Sounds -->
-  <audio data-key="49" src=""></audio>
-  <audio data-key="50" src=""></audio>
-  <audio data-key="51" src=""></audio>
-  <audio data-key="52" src=""></audio>
-  <audio data-key="53" src=""></audio>
-  <audio data-key="54" src=""></audio>
-  <audio data-key="55" src=""></audio>
-  <audio data-key="56" src=""></audio>
-  <audio data-key="57" src=""></audio>
-  <audio data-key="48" src=""></audio>
+  <audio data-key="49" src="cutie-keyboard/sounds/cat.mp3"></audio>
+  <audio data-key="50" src="cutie-keyboard/sounds/donkey.wav"></audio>
+  <audio data-key="51" src="cutie-keyboard/sounds/duck.mp3"></audio>
+  <audio data-key="52" src="cutie-keyboard/sounds/cow.mp3"></audio>
+  <audio data-key="53" src="cutie-keyboard/sounds/dog.wav"></audio>
+  <audio data-key="54" src="cutie-keyboard/sounds/elephant.mp3"></audio>
+  <audio data-key="55" src="cutie-keyboard/sounds/rooster.mp3"></audio>
+  <audio data-key="56" src="cutie-keyboard/sounds/lion.wav"></audio>
+  <audio data-key="57" src="cutie-keyboard/sounds/pig.mp3"></audio>
+  <audio data-key="48" src="cutie-keyboard/sounds/monkey.mp3"></audio>
+
+<script>
+
+function removeTransition(e) {
+		if (e.propertyName !== 'transform') return;
+    this.classList.remove('playing');
+	}
+
+function playSound(e) {
+    const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
+    const key = document.querySelector(`div[data-key='${e.keyCode}']`);
+  	if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+}
+
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+window.addEventListener('keydown', playSound);
+
+</script>
 
 </body>
