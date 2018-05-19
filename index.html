@@ -11,44 +11,44 @@
   <!-- Keys -->
   <div class="keys">
 
-    <div data-key="49" class="key">
+    <div data-key="49" class="key item">
       <img src="cutie-keyboard/animals/1cutiecat.svg" class="sound">
     </div>
 
-    <div data-key="50" class="key">
+    <div data-key="50" class="key item">
       <img src="cutie-keyboard/animals/2cutiedonkey.svg" class="sound">
     </div>
 
-    <div data-key="51" class="key">
+    <div data-key="51" class="key item">
       <img src="cutie-keyboard/animals/3cutieduck.svg" class="sound">
     </div>
 
-    <div data-key="52" class="key">
+    <div data-key="52" class="key item">
       <img src="cutie-keyboard/animals/4cutiecow.svg" class="sound">
     </div>
 
-    <div data-key="53" class="key">
+    <div data-key="53" class="key item">
       <img src="cutie-keyboard/animals/5cutiedog.svg" class="sound">
     </div>
 
-    <div data-key="54" class="key">
+    <div data-key="54" class="key item">
       <img src="cutie-keyboard/animals/6cutieelephant.svg" class="sound">
     </div>
 
-    <div data-key="55" class="key">
+    <div data-key="55" class="key item">
       <img src="cutie-keyboard/animals/7cutierooster.svg" class="sound">
     </div>
 
-    <div data-key="56" class="key">
+    <div data-key="56" class="key item">
       <img src="cutie-keyboard/animals/8cutielion.svg" class="sound">
     </div>
 
-    <div data-key="57" class="key">
+    <div data-key="57" class="key item">
       <img src="cutie-keyboard/animals/9cutiepig.svg" class="sound">
     </div>
 
-    <div data-key="48" class="key">
-      <img src="cutie-keyboard/animals/0cutiemonkey.svg" class="sound">
+    <div data-key="48" class="key item">
+      <img  src="cutie-keyboard/animals/0cutiemonkey.svg" class="sound">
     </div>
 
   </div>
@@ -85,6 +85,27 @@ function playSound(e) {
 const keys = document.querySelectorAll('.key');
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 window.addEventListener('keydown', playSound);
+
+
+const items = document.querySelectorAll('.item');
+
+function clickTrigger() {
+  let key=(this.dataset.key);
+  const audio=document.querySelector(`audio[data-key="${key}"]`);
+  const item=this;
+  item.classList.add('playing');
+  audio.currentTime = 0;
+  audio.play();
+}
+
+function unclickTrigger() {
+  this.classList.remove('play');
+}
+
+items.forEach(item=>item.addEventListener('mousedown',clickTrigger));
+items.forEach(item=>item.addEventListener('mouseup',unclickTrigger));
+
+
 
 </script>
 
