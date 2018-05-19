@@ -21,7 +21,7 @@ body, html {
 	padding: 1rem .4rem;
 	width: 10rem;
 	display: block;
-	transition: all .07s ease;
+	transition: all .4s;
 }
 
 .playing {
