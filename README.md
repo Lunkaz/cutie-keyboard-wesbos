@@ -1,4 +1,4 @@
- <h1 align="center">Cutie Keyboard</h1>
+# [Cutie Keyboard](https://lunkaz.github.io/cutie-keyboard/)
 
 ![Cutie-Keyboart](https://i.hipertextual.com/2018/06/19/Screenshot_2.jpg)
 
