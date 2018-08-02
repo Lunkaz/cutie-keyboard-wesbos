@@ -1,6 +1,6 @@
  <h1 align="center">Cutie Keyboard</h1>
 
-![Cutie-Keyboart](https://i.hipertextual.com/2018/06/19/Screenshot_2.jpg)
+[Cutie-Keyboart](https://i.hipertextual.com/2018/06/19/Screenshot_2.jpg)
 
 
 My Cutie Keyboard is my version of the first challenge of [30 days with JavaScript](https://javascript30.com/) of Wes Bos.
